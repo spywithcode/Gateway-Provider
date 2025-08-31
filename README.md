@@ -32,8 +32,7 @@ This project is a static website built as a landing page for Ethical Gateway Pro
 ## Project Structure
 
 ```
-project2/
-├── main.html          # Main website file
+index.html          # Main website file
 ├── assets/
 │   ├── Qr_pay.jpg     # QR code for payments
 │   ├── work_1.jpg     # Work showcase images
@@ -102,3 +101,4 @@ For inquiries about payment gateway services:
 © 2024 Ethical Gateway Provider. All rights reserved.
 
 Made with ♥ in India.
+
