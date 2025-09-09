@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================================
+         META TAGS & DOCUMENT SETUP
+         ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ethical Gateway Provider - Secure Payment Solutions</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Professional Razorpay payment gateway solutions with ethical pricing, fast setup, and 24/7 support. Trusted by 1000+ businesses since 2019." />
+    <meta name="keywords"
+        content="payment gateway, razorpay integration, online payments, ethical gateway, digital payments, business solutions, Rewa MP" />
+    <meta name="author" content="Ethical Gateway Provider" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Ethical Gateway Provider - Secure Payment Solutions" />
+    <meta property="og:description"
+        content="Professional Razorpay payment gateway solutions with ethical pricing and reliable service." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <!-- TODO: Add og:image with your website preview image -->
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- ============================================================
+         TAILWIND CSS CONFIGURATION
+         ============================================================ -->
+    <!-- Tailwind CSS CDN (Production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /**
+         * Tailwind Configuration - Custom Brand Colors
+         * Defines the custom color palette for the Ethical Gateway brand
+         * Blue gradient from light (50) to dark (900) for professional appearance
+         */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef9ff',  // Very light blue
+                            100: '#d9f0ff', // Light blue
+                            200: '#b8e2ff', // Medium light blue
+                            300: '#8fd1ff', // Standard blue
+                            400: '#61bbff', // Bright blue
+                            500: '#2aa0ff', // Primary brand blue
+                            600: '#1e81db', // Dark blue
+                            700: '#1a67b0', // Navy blue
+                            800: '#174f86', // Dark navy
+                            900: '#153f69'  // Very dark navy
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ============================================================
+         EXTERNAL ICONS & STYLES
+         ============================================================ -->
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ============================================================
+         CUSTOM STYLES
+         ============================================================ -->
+    <style>
+        /* Smooth scrolling for better user experience */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Card styling with subtle shadow for depth */
+        .card {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Glass effect for modern navbar appearance */
+        .glass {
+            backdrop-filter: saturate(160%) blur(8px);
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Focus styles for accessibility */
+        button:focus,
+        a:focus,
+        input:focus,
+        textarea:focus {
+            outline-offset: 2px;
+        }
+
+        /* Image gallery modal styles */
+        .gallery-modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gallery-modal-content {
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-modal.active .gallery-modal-content {
+            transform: scale(1);
+        }
+
+        /* Gallery image cursor pointer */
+        .gallery-image {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-slate-800">
+    <!-- ============================================================
+         TOP NOTICE BAR
+         Display contact information and business hours
+         ============================================================ -->
+    <div class="bg-brand-900 text-white text-sm py-2 text-center">
+        <span class="mr-2">📞</span>
+        <a href="tel:+919343856097" class="underline hover:text-brand-200 transition-colors">+91 93438 56097</a>
+        <span class="mx-3">|</span>
+        <span>Open: Mon–Sat 10am–7pm</span>
+    </div>
+
+    <!-- ============================================================
+         HEADER & NAVIGATION
+         Sticky header with logo, navigation, and call-to-action buttons
+         ============================================================ -->
+    <header class="sticky top-0 z-50 glass">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+            <!-- Logo Section -->
+            <a href="#home" class="flex items-center space-x-2" aria-label="Ethical Gateway Provider Home">
+                <div class="w-9 h-9 rounded-2xl bg-brand-600 grid place-items-center text-white font-bold">E</div>
+                <div>
+                    <p class="text-lg font-extrabold leading-tight">Ethical</p>
+                    <p class="text-[11px] -mt-0.5 text-slate-600">GateWay Provider</p>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn"
+                class="md:hidden px-3 py-2 rounded-xl border border-slate-300 hover:bg-brand-50 transition-colors"
+                aria-label="Toggle mobile menu" aria-expanded="false">
+                Menu
+            </button>
+
+            <!-- Desktop Navigation -->
+            <ul id="menu" class="hidden md:flex items-center gap-6 text-sm">
+                <li><a href="#services" class="hover:text-brand-700 transition-colors">Services</a></li>
+                <li><a href="#about" class="hover:text-brand-700 transition-colors">About</a></li>
+                <li><a href="#work" class="hover:text-brand-700 transition-colors">Work</a></li>
+                <li><a href="#testimonials" class="hover:text-brand-700 transition-colors">Reviews</a></li>
+                <li><a href="#contact" class="hover:text-brand-700 transition-colors">Contact</a></li>
+                <li>
+                    <a href="https://wa.me/919343856097" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl hover:bg-brand-700 transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="qrPaymentBtn"
+                        class="inline-flex items-center gap-2 bg-brand-600 text-white px-4 py-2 rounded-xl hover:bg-brand-700 transition-colors">
+                        <i class="fa-solid fa-qrcode"></i><span>Pay Now</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile" class="md:hidden hidden px-4 pb-4 bg-white card">
+            <a href="#services" class="block py-2 hover:text-brand-700 transition-colors">Services</a>
+            <a href="#about" class="block py-2 hover:text-brand-700 transition-colors">About</a>
+            <a href="#work" class="block py-2 hover:text-brand-700 transition-colors">Work</a>
+            <a href="#testimonials" class="block py-2 hover:text-brand-700 transition-colors">Reviews</a>
+            <a href="#contact" class="block py-2 hover:text-brand-700 transition-colors">Contact</a>
+            <a href="#" id="qrPaymentBtnMobile"
+                class="block py-2 px-4 mt-2 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-center">
+                <i class="fa-solid fa-qrcode mr-2"></i><span>Pay Now</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         HERO SECTION
+         Main landing area with value proposition and call-to-actions
+         ============================================================ -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 via-white to-sky-50"></div>
+        <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                    <span class="text-brand-700">Trusted Online </span>with <span class="text-brand-700">Payment Gateway Provider</span>
+                </h1>
+                <p class="mt-4 text-slate-600 text-lg">
+                    "Secure and transparent Razorpay payment gateway solutions for businesses, startups, and entrepreneurs."
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="#contact" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl">Get a
+                        Quote</a>
+                    <a href="https://razorpay.me/@ethicalgatewayprovider" class="px-5 py-3 rounded-xl border border-slate-300">Make a Payment</a>
+                </div>
+                <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-star"></i><span>4.9/5 rated</span></div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-bolt"></i><span>Fast turnaround</span>
+                    </div>
+                    <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i><span>Trusted &
+                            reliable</span></div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="assets\hero-image.jpg"
+                    alt="Hero" class="rounded-2xl card" loading="lazy" />
+                <div class="absolute -bottom-4 -left-4 bg-white card rounded-2xl p-4 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-600 text-white grid place-items-center">✓</div>
+                    <p class="text-sm"><span class="font-semibold">1000+ customers</span><br /><span
+                            class="text-slate-500">since 2019</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+         Overview of services offered with pricing
+         ============================================================ -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold">Services</h2>
+                <p class="text-slate-600 mt-2">What you offer — add 3–6 cards</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Card -->
+                <div class="card rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 grid place-items-center mb-4">
+                        <i class="fa-solid fa-credit-card text-brand-700"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Standard Payment Gateway Setup</h3>
+                    <p class="text-slate-600 mt-2">Seamless Razorpay integration for your website or app. Includes secure payment processing, transaction monitoring, and 24/7 support to ensure smooth operations from day one.</p>
+                    <p class="mt-3 font-semibold">₹1,999 onwards</p>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 grid place-items-center mb-4">
+                        <i class="fa-solid fa-cogs text-brand-700"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Advanced Payment Solutions</h3>
+                    <p class="text-slate-600 mt-2">Custom payment flows with recurring billing, multi-currency support, and advanced features. Perfect for e-commerce stores, subscription services, and complex business models.</p>
+                    <p class="mt-3 font-semibold">₹2,999 onwards</p>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 grid place-items-center mb-4">
+                        <i class="fa-solid fa-building text-brand-700"></i>
+                    </div>
+                    <h3 class="font-bold text-lg">Enterprise Payment Integration</h3>
+                    <p class="text-slate-600 mt-2">Comprehensive payment ecosystem with analytics dashboard, custom reporting, and dedicated account management. Designed for high-volume businesses requiring scalable solutions.</p>
+                    <p class="mt-3 font-semibold">Custom pricing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         Company mission, values, and benefits
+         ============================================================ -->
+    <section id="about" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+            <img src="assets\about-image.jpg"
+                alt="Team working together" class="rounded-2xl card" loading="lazy" />
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold">About Us</h2>
+                <p class="text-slate-600 mt-3">
+                    At Ethical Gateway Provider, we specialize in delivering secure, reliable, and hassle-free payment
+                    gateway solutions powered by Razorpay. Our mission is to help businesses, startups, and
+                    entrepreneurs accept online payments with ease, while ensuring 100% transparency and compliance.
+                </p>
+                <p class="text-slate-600 mt-3">
+                    We believe in an ethical approach to digital payments — providing clear pricing, instant setup
+                    support, and trusted integration, without hidden charges or complications.
+                </p>
+                <p class="text-slate-600 mt-3">
+                    Whether you are a small business, freelancer, e-commerce store, NGO, or service provider, our
+                    gateway solutions are designed to make your payment process smooth, safe, and scalable.
+                </p>
+                <ul class="mt-4 space-y-2 text-slate-700">
+                    <li class="flex gap-2"><span>✅</span> Seamless Razorpay integration</li>
+                    <li class="flex gap-2"><span>✅</span> Fast onboarding and activation</li>
+                    <li class="flex gap-2"><span>✅</span> 24/7 dedicated support</li>
+                    <li class="flex gap-2"><span>✅</span> Transparent and ethical services</li>
+                </ul>
+                <p class="text-slate-600 mt-3">
+                    We are not just a gateway provider — we are your digital payment partner.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WORK / GALLERY SECTION
+         Showcase recent projects or photos
+         ============================================================ -->
+    <section id="work" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold">Verified Work</h2>
+                <p class="text-slate-600">Showcase recent photos.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="workGallery">
+                <img class="rounded-2xl card gallery-image" src="./assets/work_1.jpg" alt="Project 1" loading="lazy" data-src="./assets/work_1.jpg" />
+                <img class="rounded-2xl card gallery-image" src="./assets/work_2.jpg" alt="Project 2" loading="lazy" data-src="./assets/work_2.jpg" />
+                <img class="rounded-2xl card gallery-image" src="./assets/work_3.jpg" alt="Project 3" loading="lazy" data-src="./assets/work_3.jpg" />
+                <img class="rounded-2xl card gallery-image" src="./assets/work_4.jpg" alt="Project 4" loading="lazy" data-src="./assets/work_4.jpg" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS SECTION
+         Customer reviews and feedback
+         ============================================================ -->
+    <section id="testimonials" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold">Happy Customers</h2>
+                <p class="text-slate-600">Add a few real reviews.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card rounded-2xl p-6">
+                    <p class="text-slate-700">"Amazing service and quick response. Highly recommended!"</p>
+                    <p class="mt-3 font-semibold">— Priya S.</p>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <p class="text-slate-700">"Professional team. Great value for money."</p>
+                    <p class="mt-3 font-semibold">— Rahul K.</p>
+                </div>
+                <div class="card rounded-2xl p-6">
+                    <p class="text-slate-700">"They delivered exactly what we needed."</p>
+                    <p class="mt-3 font-semibold">— Ananya M.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         Contact information and form for inquiries
+         ============================================================ -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold">Contact Us</h2>
+                <p class="text-slate-600 mt-3">Fill the form or message us on WhatsApp.</p>
+                <div class="mt-6 space-y-2 text-slate-700">
+                    <p><i class="fa-solid fa-location-dot mr-2"></i> 123, Bajarang Nager, Rewa (M.P.), 486001</p>
+                    <p><i class="fa-solid fa-phone mr-2"></i> <a href="tel:+919343856097" class="underline">+91
+                            9343856097</a></p>
+                    <p><i class="fa-solid fa-phone mr-2"></i> <a href="tel:+918889637883" class="underline">+91
+                            8889637883</a></p>
+                    <p><i class="fa-solid fa-envelope mr-2"></i> <a href="mailto:gatewayagent172@gmail.com"
+                            class="underline">gatewayagent172@gmail.com</a></p>
+                </div>
+                <a href="https://wa.me/919343856097" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 mt-6 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            
+            <!-- <form class="card rounded-2xl p-6" action="https://formspree.io/f/your-id" method="POST"
+                aria-label="Contact form">
+                <label class="block text-sm font-medium" for="name">Name</label>
+                <input id="name" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2" type="text"
+                    name="name" placeholder="Your name" required>
+                <label class="block text-sm font-medium mt-4" for="email">Email</label>
+                <input id="email" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2" type="email"
+                    name="email" placeholder="you@email.com" required>
+                <label class="block text-sm font-medium mt-4" for="phone">Phone</label>
+                <input id="phone" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2" type="tel"
+                    name="phone" placeholder="+91…">
+                <label class="block text-sm font-medium mt-4" for="message">Message</label>
+                <textarea id="message" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2" name="message"
+                    rows="5" placeholder="How can we help?" required></textarea>
+                <button class="mt-5 w-full bg-brand-600 hover:bg-brand-700 text-white px-5 py-3 rounded-xl"
+                    type="submit">Send Message</button>
+                <p class="text-xs text-slate-500 mt-3">By submitting, you agree to our privacy policy.</p>
+            </form> -->
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         Business info, quick links, policies, and social media
+         ============================================================ -->
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-4 gap-8">
+            <div>
+                <p class="text-white font-extrabold text-lg">Ethical gateway Provider</p>
+                <p class="text-slate-400 mt-2">Smart, secure, and scalable payment gateway for modern businesses.</p>
+            </div>
+            <div>
+                <p class="text-white font-semibold">Quick Links</p>
+                <ul class="mt-2 space-y-2 text-slate-400 text-sm">
+                    <li><a href="#services" class="hover:underline">Services</a></li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#work" class="hover:underline">Work</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-white font-semibold">Policies</p>
+                <ul class="mt-2 space-y-2 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:underline">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-white font-semibold">Follow</p>
+                <div class="flex gap-3 mt-2 text-lg">
+                    <a href="https://www.instagram.com/gatewayprovider108?utm_source=qr&igsh=MWJqbWhqMnByN3Jqcw%3D%3D"
+                        aria-label="Instagram" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1JCshiCZ7Q/" aria-label="Facebook" class="hover:text-white"
+                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/ethical-gateway-provider-336575381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        aria-label="LinkedIn" class="hover:text-white" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-slate-800">
+            <div class="max-w-6xl mx-auto px-4 py-4 text-sm text-slate-400 flex flex-wrap items-center justify-between">
+                <p>© <span id="year"></span> Ethical Gateway Provider All rights reserved.</p>
+                <p>Made with ♥ in India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         SCRIPTS
+         JavaScript for interactive elements: mobile menu and QR modal
+         ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle functionality
+            const menuBtn = document.getElementById('menuBtn');
+            const mobile = document.getElementById('mobile');
+            if (menuBtn) {
+                menuBtn.addEventListener('click', () => {
+                    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                    menuBtn.setAttribute('aria-expanded', !expanded);
+                    mobile.classList.toggle('hidden');
+                });
+            }
+
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Modal open/close logic for QR Payment
+            const qrPaymentBtn = document.getElementById('qrPaymentBtn');
+            const qrPaymentBtnMobile = document.getElementById('qrPaymentBtnMobile');
+            const qrModal = document.getElementById('qrModal');
+            const qrModalClose = document.getElementById('qrModalClose');
+
+            // Function to open QR modal
+            function openQRModal(e) {
+                if (e) e.preventDefault();
+                qrModal.classList.remove('hidden');
+            }
+
+            // Function to close QR modal
+            function closeQRModal() {
+                qrModal.classList.add('hidden');
+            }
+
+            // Add event listeners for desktop payment button
+            if (qrPaymentBtn && qrModal && qrModalClose) {
+                qrPaymentBtn.addEventListener('click', openQRModal);
+            }
+
+            // Add event listeners for mobile payment button
+            if (qrPaymentBtnMobile && qrModal && qrModalClose) {
+                qrPaymentBtnMobile.addEventListener('click', (e) => {
+                    openQRModal(e);
+                    // Hide mobile menu when opening modal
+                    const mobileMenu = document.getElementById('mobile');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    // Also update aria-expanded attribute on menu button
+                    const menuBtn = document.getElementById('menuBtn');
+                    if (menuBtn) {
+                        menuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // Add event listener for modal close button
+            if (qrModalClose) {
+                qrModalClose.addEventListener('click', closeQRModal);
+            }
+
+            // Close modal when clicking outside the modal content
+            if (qrModal) {
+                qrModal.addEventListener('click', (e) => {
+                    if (e.target === qrModal) {
+                        closeQRModal();
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- ============================================================
+         MODAL FOR QR PAYMENT IMAGE
+         Displays QR code for payment on demand
+         ============================================================ -->
+    <div id="qrModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-xl shadow-lg border border-gray-300 p-6 max-w-sm w-full relative">
+            <button id="qrModalClose" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-xl font-bold"
+                aria-label="Close QR Payment Modal">&times;</button>
+            <img src="./assets/Qr_pay.jpg" alt="QR Payment" class="rounded-lg shadow-md border border-gray-300 mx-auto w-72 h-auto"
+                loading="lazy" />
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MODAL FOR IMAGE GALLERY
+         Displays clicked image in a centered card-style popup
+         ============================================================ -->
+    <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 visibility-hidden gallery-modal z-50">
+        <div class="bg-white rounded-xl shadow-lg border border-gray-300 p-4 max-w-4xl w-full relative gallery-modal-content">
+            <button id="galleryModalClose" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-3xl font-bold"
+                aria-label="Close Image Gallery Modal">&times;</button>
+            <img id="galleryModalImage" src="" alt="Gallery Image" class="rounded-xl mx-auto max-h-[80vh] object-contain" />
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Existing mobile menu and QR modal code here...
+
+            // Image gallery modal elements
+            const galleryModal = document.getElementById('galleryModal');
+            const galleryModalImage = document.getElementById('galleryModalImage');
+            const galleryModalClose = document.getElementById('galleryModalClose');
+            const galleryImages = document.querySelectorAll('.gallery-image');
+
+            // Function to open gallery modal with clicked image
+            function openGalleryModal(e) {
+                const src = e.currentTarget.getAttribute('data-src') || e.currentTarget.src;
+                galleryModalImage.src = src;
+                galleryModal.classList.add('active');
+                galleryModal.classList.remove('opacity-0', 'visibility-hidden');
+            }
+
+            // Function to close gallery modal
+            function closeGalleryModal() {
+                galleryModal.classList.remove('active');
+                galleryModal.classList.add('opacity-0', 'visibility-hidden');
+                galleryModalImage.src = '';
+            }
+
+            // Add click event listeners to gallery images
+            galleryImages.forEach(img => {
+                img.addEventListener('click', openGalleryModal);
+            });
+
+            // Close modal on close button click
+            if (galleryModalClose) {
+                galleryModalClose.addEventListener('click', closeGalleryModal);
+            }
+
+            // Close modal when clicking outside the modal content
+            if (galleryModal) {
+                galleryModal.addEventListener('click', (e) => {
+                    if (e.target === galleryModal) {
+                        closeGalleryModal();
+                    }
+                });
+            }
+
+            // Optional: Close modal on Escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+                    closeGalleryModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
